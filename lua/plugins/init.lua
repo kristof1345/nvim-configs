@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -15,27 +15,32 @@ return {
   },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc", "html", "css", "javascript"
-  		},
-  	},
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "javascript",
+      },
+    },
   },
 
-  {
-    "kylechui/nvim-surround",
-    event = "VeryLazy",
-    config = function()
-        require("nvim-surround").setup({})
-    end
-  },
+  -- {
+  -- "kylechui/nvim-surround",
+  -- event = "VeryLazy",
+  -- config = function()
+  -- require("nvim-surround").setup({})
+  -- end
+  -- },
 
   {
     "ggandor/leap.nvim",
     lazy = false,
-    config = function ()
-      require('leap').add_default_mappings()
-    end
+    config = function()
+      require("leap").add_default_mappings()
+    end,
   },
 }

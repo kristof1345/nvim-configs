@@ -4,6 +4,22 @@ local options = {
     css = { "prettier" },
     html = { "prettier" },
     javascript = { "prettierd", "prettier", stop_after_first = true },
+    -- php = { "php_cs_fixer" },
+    c = { "clang-format" },
+  },
+
+  formatters = {
+    ["clang-format"] = {
+      prepend_args = {
+        "-style={ \
+                IndentWidth: 4, \
+                TabWidth: 4, \
+                UseTab: Never, \
+                AccessModifierOffset: 0, \
+                IndentAccessModifiers: true, \
+                PackConstructorInitializers: Never}",
+      },
+    },
   },
 
   format_on_save = {
